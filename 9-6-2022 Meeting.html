@@ -1,0 +1,670 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>9/6/2022 Meeting</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	text-indent: -1.7em;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-opaquegray { background-color: rgba(255, 255, 255, 0.0375); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="437eef88-77dc-47a3-944d-706fa5ea3872" class="page sans"><header><h1 class="page-title">9/6/2022 Meeting</h1></header><div class="page-body"><nav id="ad19c97e-eb86-47f0-9436-09cdc8dea936" class="block-color-gray table_of_contents"><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#c6d15587-a96b-4f51-acca-6feb399d3731">Make a Website for the Club</a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#45936d8c-ae86-4aec-9ff0-cbd67f11d0fc">Adjustments</a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#eb5df56a-a361-41ae-883a-2f016f7ffdb9">What do we expect to see from CS Club</a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#ac7438bc-ccf0-4596-abc8-207ea9bb7a85">Networking</a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#5a7a8d3c-0dd5-4bac-836b-c3dee0a7aec1">Online Courses</a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#b8f443ac-8bbd-4438-830c-c0bc15552c8d">Social Networking</a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#9e7f9ad1-a3f8-476b-a439-7aa4389e4e3b">Specifically Want to See </a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#4e74b23e-36a1-4016-a3ac-97d25520fc92">Hubbub</a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#1552cbc6-6d3b-4b59-835c-edf935661826">Voting</a></div></nav><h2 id="c6d15587-a96b-4f51-acca-6feb399d3731" class="">Make a Website for the Club</h2><ul id="a542aa7c-17a0-4ddf-b354-63333bc003f7" class="bulleted-list"><li style="list-style-type:disc">Voting for which website we would like to use</li></ul><h2 id="45936d8c-ae86-4aec-9ff0-cbd67f11d0fc" class="">Adjustments</h2><ul id="9501e695-f5eb-486e-b295-00a155412e42" class="bulleted-list"><li style="list-style-type:disc">Having a meeting every other week, next meeting <time>@September 20, 2022</time> </li></ul><ul id="3578cbd6-6037-42db-9f62-66ff2399ca7f" class="bulleted-list"><li style="list-style-type:disc">4:30PM - 6:00 PM Tuesday</li></ul><h2 id="eb5df56a-a361-41ae-883a-2f016f7ffdb9" class="">What do we expect to see from CS Club</h2><ul id="c6741b55-86aa-4c3c-81c8-08a3fe77724a" class="bulleted-list"><li style="list-style-type:disc">monthly topics</li></ul><ul id="a1649778-c8e8-4805-b7ea-1d0086b6c1e9" class="bulleted-list"><li style="list-style-type:disc">Having themes for websites and deciding which website fits the theme the best</li></ul><ul id="ed5451e8-06df-4225-8b62-111535cc0de4" class="bulleted-list"><li style="list-style-type:disc">(Need to worry about budgeting, <mark class="highlight-red_background">not an extremely important step</mark>)</li></ul><p id="321db57f-481c-4898-83ce-154bc56041af" class="">
+</p><hr id="909f9a57-0afc-42e6-84e1-d24ff4324225"/><h3 id="ac7438bc-ccf0-4596-abc8-207ea9bb7a85" class="">Networking</h3><ul id="5c77e5c4-ca4a-4bbc-aa33-da5128deb3dd" class="bulleted-list"><li style="list-style-type:disc">networking (Brandon offers to talk about it :D)</li></ul><ul id="49b0bdc7-4961-432a-be69-0d329f870a0f" class="bulleted-list"><li style="list-style-type:disc">We can also talk about AI, and keeping up to date with AI art<ul id="a8ba5c8f-d91a-4a8b-9dde-62425dd24d50" class="bulleted-list"><li style="list-style-type:circle">Talk about where AI has started, where it is at, and where we are going with AI</li></ul></li></ul><ul id="ddc5cb72-e4d3-4f2b-8655-bd7a4e31ad6e" class="bulleted-list"><li style="list-style-type:disc">Talk about past viruses<ul id="8dbdb3c7-2863-4a37-acc3-f168dab28982" class="bulleted-list"><li style="list-style-type:circle">I Love You virus</li></ul></li></ul><ul id="c3d01af1-c754-4bc4-bdac-00676335653c" class="bulleted-list"><li style="list-style-type:disc"><code>Cloud</code> computing</li></ul><ul id="0592ece5-0113-422c-bdb9-3b6bbabde150" class="bulleted-list"><li style="list-style-type:disc">Crypto</li></ul><hr id="617c396c-340e-4973-a1a8-2fb460de346c"/><h3 id="5a7a8d3c-0dd5-4bac-836b-c3dee0a7aec1" class="">Online Courses</h3><ul id="63f6ecf2-e1cf-4844-acf2-9eeb2e409948" class="bulleted-list"><li style="list-style-type:disc">tutorials<ul id="5437d0a6-335a-4d82-99df-7874d0d3c964" class="bulleted-list"><li style="list-style-type:circle">recourses for coding online</li></ul><ul id="81613376-c3e5-4bd8-a3f2-b1a1c46b08f7" class="bulleted-list"><li style="list-style-type:circle">and tools</li></ul><ul id="71cc2af8-613d-4f24-b606-f4abf27e4411" class="bulleted-list"><li style="list-style-type:circle">what has helped students in the past</li></ul><ul id="09886673-fc27-42de-bdc9-45b03579e85f" class="bulleted-list"><li style="list-style-type:circle">CS50</li></ul></li></ul><ul id="2a54ec5c-cb3a-40fe-a233-21e477f7872d" class="bulleted-list"><li style="list-style-type:disc">SQL/Databases</li></ul><ul id="b5c4ea9f-1ee9-493b-be97-f3cdd916c7fe" class="bulleted-list"><li style="list-style-type:disc">raspberry pi/Arduinos/hardware<ul id="bd97bd2b-53d8-4c11-b74e-75f0e57e2387" class="bulleted-list"><li style="list-style-type:circle">We can talk about making PCs or having some time to build PCs</li></ul></li></ul><hr id="95eb5ed8-44fd-4672-8422-25dde0955fdb"/><h3 id="b8f443ac-8bbd-4438-830c-c0bc15552c8d" class="">Social Networking</h3><ul id="6305a9aa-9d4d-4a0f-8918-55d57c647a60" class="bulleted-list"><li style="list-style-type:disc">Need to schedule online meetings<ul id="79844f18-422a-4150-9c33-96fb3536519b" class="bulleted-list"><li style="list-style-type:circle">A discord</li></ul><ul id="abb9773c-23c8-4a55-9e4a-1a1a8ff6736c" class="bulleted-list"><li style="list-style-type:circle">Zoom</li></ul><ul id="3da27749-8bb0-46f6-a108-a7811d1c3dc6" class="bulleted-list"><li style="list-style-type:circle">WebEx</li></ul></li></ul><ul id="5f9f156b-11d1-44d2-b6d8-b6456425ca52" class="bulleted-list"><li style="list-style-type:disc">Chicago advocates speaking about computer science</li></ul><ul id="eca522d1-4678-44e4-b21b-539091abe130" class="bulleted-list"><li style="list-style-type:disc">outside speakers<ul id="464cee85-d60c-4108-ad02-6cdfd3f05799" class="bulleted-list"><li style="list-style-type:circle">we can have professors talk</li></ul></li></ul><ul id="35904c9d-910f-4cb9-936a-3da68e5529b3" class="bulleted-list"><li style="list-style-type:disc">Need to recruit more people, advertise on other clubs Discords</li></ul><ul id="598c2095-0b70-4238-8226-b009a75b79d1" class="bulleted-list"><li style="list-style-type:disc">We can have moral discussions about restrictions and where tech is going. <ul id="c76d3352-404c-48dc-b28b-890e9da42123" class="bulleted-list"><li style="list-style-type:circle">“Google made a new AI, lets talk about it etc… etc…”</li></ul></li></ul><ul id="84c7af30-8260-42e3-8806-7d0c0203c4db" class="bulleted-list"><li style="list-style-type:disc">Hackathons</li></ul><ul id="f0497314-a919-4326-a226-32455a7f5ccc" class="bulleted-list"><li style="list-style-type:disc"><a href="https://worldcomputerexchange.org/">WCE - World Computer Exchange</a><ul id="3f45c8e0-73f3-4464-a644-b9e613c58a68" class="bulleted-list"><li style="list-style-type:circle">Sessions to go and check whether or not a computer has certain components</li></ul><ul id="16774dcc-694a-41ba-915d-2345af3dff92" class="bulleted-list"><li style="list-style-type:circle">Volunteering</li></ul></li></ul><h3 id="9e7f9ad1-a3f8-476b-a439-7aa4389e4e3b" class="">Specifically Want to See </h3><ul id="95e19047-88fb-49f9-81a8-90ac5cc3aef9" class="bulleted-list"><li style="list-style-type:disc">Websites</li></ul><ul id="1ebcad93-fabf-47bf-a677-fe853f714d4d" class="bulleted-list"><li style="list-style-type:disc">Video game ideas</li></ul><ul id="b9745b04-3d8e-464a-967f-13259e1278c5" class="bulleted-list"><li style="list-style-type:disc">Databases with websites</li></ul><ul id="48e76e90-4b7b-4cc9-86d4-92030a66f6a2" class="bulleted-list"><li style="list-style-type:disc">Dissecting CS news</li></ul><ul id="f5734b29-69cd-48e3-81d6-1315918cba40" class="bulleted-list"><li style="list-style-type:disc">Cybersecurity</li></ul><hr id="f985db4b-7474-4468-adcc-62f1dc8c285a"/><h2 id="4e74b23e-36a1-4016-a3ac-97d25520fc92" class="">Hubbub</h2><ul id="a14b9680-7165-4aa4-93b0-d711f3617edd" class="bulleted-list"><li style="list-style-type:disc">We can probably table during a lunch session</li></ul><ul id="bd74637c-cdd2-4cac-a37f-a944cb2e01c3" class="bulleted-list"><li style="list-style-type:disc">If we table solo we are not competing with other people at Hubbub</li></ul><ul id="7c77a649-5af0-4333-b74b-26b5127d4838" class="bulleted-list"><li style="list-style-type:disc">Word of mouth, advertising there</li></ul><h2 id="1552cbc6-6d3b-4b59-835c-edf935661826" class="">Voting</h2><p id="a826e872-aae0-4cdb-ae86-e33544a1493e" class="">We need to discuss what we want to see, monthly or what we should start off with</p></div></article></body></html>
